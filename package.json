@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "ai project for chocolate bars",
   "main": "server/index.js",
+  "engines": {
+    "node": "18.7.0"
+  },
   "scripts": {
     "start": "node server/index.js",
+    "build": "cd client && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "PJATK marketing team",
@@ -13,6 +17,7 @@
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "openai": "^3.2.1"
+    "openai": "^3.2.1",
+    "path": "^0.12.7"
   }
 }

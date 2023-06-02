@@ -15,15 +15,8 @@ function Home() {
     const [response, setResponse] = useState('');
     const [selectedOption, setSelectedOption] = useState(null);
 
-    const onPromptClick = () => {
-        const randomPrompt =
-            `Give me the absolute coolest, most mind-blowing, extraordinary ChatGPT prompt that will really show off the power of ChatGPT. Make sure that it will surprise and amuse even people who often use ChatGPT in their everyday lives, and it will also be useful to them in some way. This prompt should be concise and straight to the point. Focus on the field of ${selectedOption.value}`;
-        setPrompt(randomPrompt);
-    }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-
+    const promptRequest = (prompt) => {
         axios
             .post("http://localhost:8080/chat", {prompt})
             .then((res) => {
@@ -32,6 +25,17 @@ function Home() {
             .catch((err) => {
                 console.log(`response error ${err}`);
             })
+    }
+
+    const onPromptClick = () => {
+        const randomPrompt =
+            `Give me the absolute coolest, most mind-blowing, extraordinary ChatGPT prompt that will really show off the power of ChatGPT. Make sure that it will surprise and amuse even people who often use ChatGPT in their everyday lives, and it will also be useful to them in some way. This prompt should be concise and straight to the point. Focus on the field of ${selectedOption.value}`;
+        promptRequest(randomPrompt);
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        promptRequest(prompt);
     }
     return (
         <>

@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const {Configuration, OpenAIApi} = require('openai');
 
@@ -21,9 +22,12 @@ app.post('/chat', async (req, res) => {
 
     const complete = await openAi.createCompletion({
         model: 'text-davinci-003',
-        max_tokens: 512,
-        temperature: 0,
-        prompt
+        prompt,
+        temperature: 1,
+        max_tokens: 100,
+        top_p: 1.0,
+        frequency_penalty: 0.0,
+        presence_penalty: 0.0,
     })
 
     res.send(complete.data.choices[0].text);
@@ -32,4 +36,9 @@ app.post('/chat', async (req, res) => {
 const port = 8080;
 app.listen(port, () => {
     console.log(`Server is listening ${port}`);
+});
+
+// All other GET requests not handled before will return our React app
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
