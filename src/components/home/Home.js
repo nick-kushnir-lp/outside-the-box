@@ -5,11 +5,11 @@ import {useState} from "react";
 
 function Home() {
     const options = [
-        {value: 'manager', label: 'manager'},
-        {value: 'developer', label: 'developer'},
-        {value: 'professor', label: 'professor'},
-        {value: 'designer', label: 'designer'},
-        {value: 'aged human', label: 'aged human'},
+        {value: 'manager', label: 'Management'},
+        {value: 'developer', label: 'Developer'},
+        {value: 'professor', label: 'Professor'},
+        {value: 'designer', label: 'Designer'},
+        {value: 'maths', label: 'Maths'}
     ];
     const [prompt, setPrompt] = useState('');
     const [response, setResponse] = useState('');
@@ -39,19 +39,27 @@ function Home() {
     }
     return (
         <>
+            <p className='w-full text-left'>
+                Our chocolate is so smart, it can help you with Chat GPT prompts!
+            </p>
+            <p className='w-full my-2 text-left'>
+                description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.
+            </p>
             <form className='w-full text-center' onSubmit={handleSubmit}>
                 <Select
                     defaultValue={null}
                     defaultMenuIsOpen={false}
-                    placeholder="Choose your profession"
+                    placeholder="Choose your field of interest"
                     options={options}
                     onChange={setSelectedOption}
                 />
                 <div className='md-6'>
                     <label
                         htmlFor='add-some-text'
-                        className='block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4'>
-                        You can say/add something
+                        className='block text-gray-500 mt-2 font-bold md:text-left mb-1 md:mb-0 pr-4'>
+                        Don't see your field of interest? Don't worry, we'll add more soon!
                     </label>
                 </div>
                 <div className='py-4'>
@@ -82,6 +90,7 @@ function Home() {
                 </div>
             </form>
             <div className="w-full items-center mt-4">
+                <p className="text-center">Response from chat gpt:</p>
                 <p>{response}</p>
             </div>
         </>

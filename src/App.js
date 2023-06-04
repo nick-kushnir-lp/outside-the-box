@@ -11,10 +11,14 @@ function App() {
                     <div className='w-full justify-center items-center py-8'>
                         <BrowserRouter>
                             <div className={'text-center'}>
-                                <NavLink to="/">
+                                <NavLink
+                                    className={({ isActive }) =>  isActive ? 'font-bold' : 'font-thin'}
+                                    to="/">
                                     Home
                                 </NavLink>
-                                <NavLink className={'ml-2'} to="/about">
+                                <NavLink
+                                    className={({ isActive }) => isActive ? 'ml-2 font-bold' : 'ml-2 font-thin'}
+                                    to="/about">
                                     About Us
                                 </NavLink>
                             </div>
