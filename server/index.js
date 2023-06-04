@@ -1,18 +1,23 @@
-const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const path = require('path');
-const dotenv = require('dotenv');
+import express from 'express';
+import cors from 'cors';
+import * as bodyParser from 'body-parser';
+import path, {dirname} from 'path';
+import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+import {Configuration, OpenAIApi} from 'openai';
 dotenv.config();
 
 const port = process.env.PORT || 3001;
-const buildPath = path.join(__dirname, 'build')
+const currentModuleUrl = new URL(import.meta.url);
+const currentModulePath = dirname(fileURLToPath(currentModuleUrl));
+const buildPath = path.join(currentModulePath, '../build')
 
-const {Configuration, OpenAIApi} = require('openai');
 
 const config = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
 })
+
+console.log(config);
 
 const openAi = new OpenAIApi(config);
 
