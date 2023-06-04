@@ -1,23 +1,52 @@
 {
-  "name": "chocolate_bar_prjct",
-  "version": "1.0.0",
-  "description": "ai project for chocolate bars",
-  "main": "server/index.js",
-  "engines": {
-    "node": "18.7.0"
-  },
-  "scripts": {
-    "start": "node server/index.js",
-    "build": "cd client && npm install && npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "PJATK marketing team",
-  "license": "ISC",
+  "name": "chocolate-openai",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
+    "dotenv": "^16.1.3",
     "express": "^4.18.2",
     "openai": "^3.2.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.2",
+    "react-scripts": "5.0.1",
+    "react-select": "^5.7.3",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:8080",
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.2"
   }
 }

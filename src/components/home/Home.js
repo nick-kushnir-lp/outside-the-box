@@ -18,7 +18,7 @@ function Home() {
 
     const promptRequest = (prompt) => {
         axios
-            .post("http://localhost:8080/chat", {prompt})
+            .post("/chat", {prompt})
             .then((res) => {
                 setResponse(res.data);
             })

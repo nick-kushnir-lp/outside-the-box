@@ -2,6 +2,11 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
+const dotenv = require('dotenv');
+dotenv.config();
+
+const port = process.env.PORT || 3001;
+const buildPath = path.join(__dirname, 'build')
 
 const {Configuration, OpenAIApi} = require('openai');
 
@@ -13,6 +18,7 @@ const openAi = new OpenAIApi(config);
 
 // setup Server part
 const app = express();
+app.use(express.static(buildPath));
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -33,12 +39,10 @@ app.post('/chat', async (req, res) => {
     res.send(complete.data.choices[0].text);
 })
 
-const port = 8080;
+app.get('*', (req, res) => {
+    res.sendFile(path.join(buildPath, 'index.html'))
+})
+
 app.listen(port, () => {
     console.log(`Server is listening ${port}`);
-});
-
-// All other GET requests not handled before will return our React app
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
