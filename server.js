@@ -19,7 +19,7 @@ const openAi = new OpenAIApi(config);
 // setup Server part
 const app = express();
 app.use(express.static(buildPath));
-app.use(express.json());
+app.use(bodyParser.json());
 app.use(cors());
 
 // chat GPT endpoint
@@ -38,7 +38,6 @@ app.post('/chat', async (req, res) => {
 
     res.send(complete.data.choices[0].text);
 })
-
 app.get('*', (req, res) => {
     res.sendFile(path.join(buildPath, 'index.html'))
 })

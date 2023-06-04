@@ -18,7 +18,7 @@ function Home() {
 
     const promptRequest = (prompt) => {
         axios
-            .post("/chat", {prompt})
+            .post("https://outside-the-box.onrender.com/chat", {prompt})
             .then((res) => {
                 setResponse(res.data);
             })
