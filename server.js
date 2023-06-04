@@ -11,7 +11,7 @@ const buildPath = path.join(__dirname, 'build')
 const {Configuration, OpenAIApi} = require('openai');
 
 const config = new Configuration({
-    apiKey: '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',
+    apiKey: process.env.OPENAI_API_KEY,
 })
 
 const openAi = new OpenAIApi(config);
@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // chat GPT endpoint
-app.post('https://outside-the-box.onrender.com/chat', async (req, res) => {
+app.post('/chat', async (req, res) => {
     const { prompt } = req.body;
 
     const complete = await openAi.createCompletion({
