@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // chat GPT endpoint
-app.post('/chat', async (req, res) => {
+app.post('https://outside-the-box.onrender.com/chat', async (req, res) => {
     const { prompt } = req.body;
 
     const complete = await openAi.createCompletion({
