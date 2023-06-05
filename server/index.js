@@ -27,6 +27,12 @@ app.use(express.static(buildPath));
 app.use(cors());
 app.use(express.json());
 
+app.get('/', async (req, res) => {
+    res.status(200).send({
+        message: 'Hello from Outside the box!'
+    })
+})
+
 // chat GPT endpoint
 app.post('/chat', async (req, res) => {
     const { prompt } = req.body;
@@ -43,9 +49,9 @@ app.post('/chat', async (req, res) => {
 
     res.send(complete.data.choices[0].text);
 })
-app.get('*', (req, res) => {
-    res.sendFile(path.join(buildPath, 'index.html'))
-})
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(buildPath, 'index.html'))
+// })
 
 app.listen(port, () => {
     console.log(`Server is listening ${port}`);
