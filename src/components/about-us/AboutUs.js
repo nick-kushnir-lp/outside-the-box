@@ -5,12 +5,12 @@ function AboutUs() {
             <div className='w-[720px] mx-auto py-24'>
                 <div className='w-full items-center px-8'>
                     <p
-                        className='block text-gray-500 font-bold text-center mb-1 md:mb-0 pr-4'>
+                        className='block text-white uppercase font-bold text-center mb-1 md:mb-0 pr-4'>
                         About Us
                     </p>
                 </div>
                 <div className='flex justify-between'>
-                    <p>
+                    <p className='text-colorDescription'>
                         Dark chocolate for people, who work with their brain, not with their hands.
 
                         At Outside the Box, our mission is to empower smart and creative minds to reach heights they

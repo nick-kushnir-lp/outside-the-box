@@ -12,12 +12,12 @@ function App() {
                         <BrowserRouter>
                             <div className={'text-center'}>
                                 <NavLink
-                                    className={({ isActive }) =>  isActive ? 'font-bold' : 'font-thin'}
+                                    className={({ isActive }) =>  isActive ? 'uppercase text-white font-bold text-2xl' : 'uppercase text-white font-thin text-2xl'}
                                     to="/">
                                     Home
                                 </NavLink>
                                 <NavLink
-                                    className={({ isActive }) => isActive ? 'ml-2 font-bold' : 'ml-2 font-thin'}
+                                    className={({ isActive }) => isActive ? 'uppercase text-white ml-2 font-bold text-2xl' : 'uppercase text-white ml-2 font-thin text-2xl'}
                                     to="/about">
                                     About Us
                                 </NavLink>

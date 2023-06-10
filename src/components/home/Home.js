@@ -49,10 +49,10 @@ function Home() {
     }
     return (
         <>
-            <p className='w-full text-left'>
+            <p className='w-full text-left text-white mt-4'>
                 Our chocolate is so smart, it writes ChatGPT prompts for you!
             </p>
-            <p className='w-full my-2 text-left'>
+            <p className='w-full my-2 text-left text-colorDescription'>
                 It's hard to deny that the sudden development of AI technology will change the world for the better.
                 However, not all people fully realize what this new technology is really capable of. To solve this
                 problem, we've created a website which can help you generate as many unusual ChatGPT prompts as you
@@ -69,7 +69,7 @@ function Home() {
                 <div className='md-6'>
                     <label
                         htmlFor='add-some-text'
-                        className='block text-gray-500 mt-2 font-bold md:text-left mb-1 md:mb-0 pr-4'>
+                        className='block text-colorDescription mt-1 font-thin md:text-left mb-1 md:mb-0 pr-4'>
                         Don't see your field of interest? Don't worry, we'll add more soon!
                     </label>
                 </div>
@@ -86,7 +86,7 @@ function Home() {
                     <button
                         disabled={!selectedOption}
                         type="submit"
-                        className="focus:outline-none disabled:bg-gray-500 shadow bg-purple-500 hover:bg-purple-400 py-2 px-4 rounded text-white font-bold"
+                        className="focus:outline-none border border-buttonBackground disabled:bg-gray-500 shadow bg-buttonBackground hover:bg-transparent py-2 px-4 rounded text-white font-bold"
                         onClick={onPromptClick}
                     >
                         Random Prompt
@@ -94,14 +94,14 @@ function Home() {
                     <button
                         disabled={!prompt}
                         type="submit"
-                        className="disabled:bg-gray-500 shadow bg-purple-500 hover:bg-purple-400 py-2 px-4 rounded text-white font-bold focus:outline-none"
+                        className="disabled:bg-gray-500 border border-buttonBackground bg-buttonBackground hover:bg-transparent shadow bg-purple-500 hover:bg-purple-400 py-2 px-4 rounded text-white font-bold focus:outline-none"
                     >
                         Send
                     </button>
                 </div>
             </form>
             <div className="w-full items-center mt-4">
-                <p className="text-center">Response from chat gpt:</p>
+                <p className="text-left text-white">Response from chat gpt:</p>
                 <p>{response}</p>
             </div>
         </>
