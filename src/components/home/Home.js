@@ -5,15 +5,25 @@ import {useState} from "react";
 
 function Home() {
     const options = [
-        {value: 'manager', label: 'Management'},
-        {value: 'developer', label: 'Developer'},
-        {value: 'professor', label: 'Professor'},
-        {value: 'designer', label: 'Designer'},
-        {value: 'maths', label: 'Maths'}
+        {value: 'programming', label: 'Programming'},
+        {value: 'game development', label: 'Game Development'},
+        {value: 'physics', label: 'Physics'},
+        {value: 'statistics', label: 'Statistics'},
+        {value: 'math', label: 'Math'},
+        {value: 'management', label: 'Management'},
+        {value: 'writing', label: 'Writing'},
+        {value: 'motivation', label: 'Motivation'},
+        {value: 'well-being', label: 'Well-being'},
+        {value: 'nutrition', label: 'Nutrition'},
+        {value: 'science', label: 'Science'},
+        {value: 'debate', label: 'Debate'},
     ];
     const [prompt, setPrompt] = useState('');
     const [response, setResponse] = useState('');
     const [selectedOption, setSelectedOption] = useState(null);
+
+    const sortedList = options.sort((a, b) =>
+        a.value.localeCompare(b.value));
 
 
     const promptRequest = (prompt) => {
@@ -29,8 +39,8 @@ function Home() {
 
     const onPromptClick = () => {
         const randomPrompt =
-            `Give me the absolute coolest, most mind-blowing, extraordinary ChatGPT prompt that will really show off the power of ChatGPT. Make sure that it will surprise and amuse even people who often use ChatGPT in their everyday lives, and it will also be useful to them in some way. This prompt should be concise and straight to the point. Focus on the field of ${selectedOption.value}`;
-        promptRequest(randomPrompt);
+            `Give me the absolute coolest, most mind-blowing, extraordinary ChatGPT prompt that will really show off the power of ChatGPT. Make sure that it will be both amusing and useful. This prompt should be no longer than one sentence. Focus on the field of ${selectedOption.value}`;
+        setPrompt(randomPrompt);
     }
 
     const handleSubmit = (event) => {
@@ -40,19 +50,20 @@ function Home() {
     return (
         <>
             <p className='w-full text-left'>
-                Our chocolate is so smart, it can help you with Chat GPT prompts!
+                Our chocolate is so smart, it writes ChatGPT prompts for you!
             </p>
             <p className='w-full my-2 text-left'>
-                description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+                It's hard to deny that the sudden development of AI technology will change the world for the better.
+                However, not all people fully realize what this new technology is really capable of. To solve this
+                problem, we've created a website which can help you generate as many unusual ChatGPT prompts as you
+                need. Let the chocolate and intellect unite!
             </p>
             <form className='w-full text-center' onSubmit={handleSubmit}>
                 <Select
                     defaultValue={null}
                     defaultMenuIsOpen={false}
                     placeholder="Choose your field of interest"
-                    options={options}
+                    options={sortedList}
                     onChange={setSelectedOption}
                 />
                 <div className='md-6'>
