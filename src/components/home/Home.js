@@ -75,8 +75,8 @@ function Home() {
                 </div>
                 <div className='py-4'>
                     <input
-                        className='bg-gray-200 appearance-none border-2 border-gray-200
-                                rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white'
+                        className='bg-darkBackground appearance-none border-2 border-buttonBackground
+                                rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:darkBackground'
                         type='text'
                         value={prompt}
                         onChange={(e) => setPrompt(e.target.value)}
@@ -102,7 +102,7 @@ function Home() {
             </form>
             <div className="w-full items-center mt-4">
                 <p className="text-left text-white">Response from chat gpt:</p>
-                <p>{response}</p>
+                <p className="h-24 min-h-full text-white w-full border border-buttonBackground">{response}</p>
             </div>
         </>
     )
