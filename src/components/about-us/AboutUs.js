@@ -2,17 +2,18 @@ function AboutUs() {
 
     return (
         <>
-            <div className='w-[720px] mx-auto py-24'>
+            <div className='w-[550px] mx-auto py-12 px-4 mt-12 rounded-lg border border-r-[4px] border-b-[4px] border-buttonBackground '>
                 <div className='w-full items-center px-8'>
                     <p
-                        className='block text-white uppercase font-bold text-center mb-1 md:mb-0 pr-4'>
+                        className='font-maven block text-white uppercase font-medium text-2xl text-center md:mb-0 pr-4'>
                         About Us
                     </p>
                 </div>
-                <div className='flex justify-between'>
-                    <p className='text-colorDescription'>
-                        Dark chocolate for people, who work with their brain, not with their hands.
-
+                <div className='mt-3 text-xl flex justify-between'>
+                    <p className='font-monserrat text-colorDescription'>
+                        <span className='italic font-monserrat'>Dark chocolate for people, who work with their brain, not with their hands.</span>
+                        <br/>
+                        <br/>
                         At Outside the Box, our mission is to empower smart and creative minds to reach heights they
                         never thought possible. We believe that innovation and breakthroughs occur when nerds and
                         brainiacs gather together and start thinking outside the box - and we, in turn, are delighted to
