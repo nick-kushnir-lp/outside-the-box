@@ -24,10 +24,6 @@
   border-radius: 10px;
 }
 
-.outside-box__control {
-  border: 1px solid #00A89E !important;
-}
-
 .outside-box__placeholder {
   text-align: left;
   color: rgba(255, 255, 255, 0.78);
@@ -70,6 +66,32 @@
 
 .outside-box__indicators {
   background: #312528;
+  border-radius: 10px;
+}
+
+.outside-box__value-container {
+  border: 0 !important;
+  border-radius: 10px !important;
+}
+
+.outside-box__indicator svg {
+  fill: #00A89E;
+}
+
+.outside-box__indicator-separator {
+  background-color: #00A89E !important;
+}
+
+.outside-box__control {
+  border: 0 !important;
+  background: transparent !important;
+  border-radius: 10px;
+}
+
+.outside-box__control--is-focused,
+.outside-box__control--menu-is-open
+{
+  border-radius: 10px !important;
 }
 
 @media (prefers-reduced-motion: no-preference) {
