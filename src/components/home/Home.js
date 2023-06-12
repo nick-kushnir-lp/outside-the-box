@@ -49,34 +49,38 @@ function Home() {
     }
     return (
         <>
-            <p className='w-full text-left text-white mt-4'>
+            <p className='w-full text-center text-white font-medium font-maven text-2xl mt-5'>
                 Our chocolate is so smart, it writes ChatGPT prompts for you!
             </p>
-            <p className='w-full my-2 text-left text-colorDescription'>
+            <p className='w-full my-2 text-left font-monserrat text-base text-colorDescription'>
                 It's hard to deny that the sudden development of AI technology will change the world for the better.
                 However, not all people fully realize what this new technology is really capable of. To solve this
                 problem, we've created a website which can help you generate as many unusual ChatGPT prompts as you
                 need. Let the chocolate and intellect unite!
             </p>
-            <form className='w-full text-center' onSubmit={handleSubmit}>
+            <form className='w-full text-center mt-9' onSubmit={handleSubmit}>
+                <p className="ml-3 font-monserrat text-left text-white text-sm">Your field of interest:</p>
                 <Select
+                    classNamePrefix='outside-box'
+                    className='outside'
                     defaultValue={null}
                     defaultMenuIsOpen={false}
-                    placeholder="Choose your field of interest"
+                    placeholder="Choose your field of interest..."
                     options={sortedList}
                     onChange={setSelectedOption}
                 />
                 <div className='md-6'>
                     <label
                         htmlFor='add-some-text'
-                        className='block text-colorDescription mt-1 font-thin md:text-left mb-1 md:mb-0 pr-4'>
+                        className='block ml-3 font-monserrat text-base text-colorDescription md:text-left mb-1 md:mb-0 pr-4'>
                         Don't see your field of interest? Don't worry, we'll add more soon!
                     </label>
                 </div>
-                <div className='py-4'>
-                    <input
-                        className='bg-darkBackground appearance-none border-2 border-buttonBackground
-                                rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:darkBackground'
+                <div className='py-4 mt-9'>
+                    <p className="ml-3 font-monserrat text-left text-white text-sm">Your prompt:</p>
+                    <textarea
+                        className='h-24 rounded-lg bg-darkBackground appearance-none border border-buttonBackground
+                                rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:text-white'
                         type='text'
                         value={prompt}
                         onChange={(e) => setPrompt(e.target.value)}
@@ -86,7 +90,7 @@ function Home() {
                     <button
                         disabled={!selectedOption}
                         type="submit"
-                        className="focus:outline-none border border-buttonBackground disabled:bg-gray-500 shadow bg-buttonBackground hover:bg-transparent py-2 px-4 rounded text-white font-bold"
+                        className="font-maven rounded-lg uppercase focus:outline-none border border-buttonBackground disabled:bg-gray-500 shadow bg-buttonBackground hover:bg-transparent py-2 px-4 rounded text-sm text-white font-medium"
                         onClick={onPromptClick}
                     >
                         Random Prompt
@@ -94,15 +98,15 @@ function Home() {
                     <button
                         disabled={!prompt}
                         type="submit"
-                        className="disabled:bg-gray-500 border border-buttonBackground bg-buttonBackground hover:bg-transparent shadow bg-purple-500 hover:bg-purple-400 py-2 px-4 rounded text-white font-bold focus:outline-none"
+                        className="font-maven rounded-lg uppercase disabled:bg-gray-500 border border-buttonBackground bg-buttonBackground hover:bg-transparent shadow hover:bg-purple-400 py-2 px-4 rounded text-white text-sm font-medium focus:outline-none"
                     >
                         Send
                     </button>
                 </div>
             </form>
-            <div className="w-full items-center mt-4">
-                <p className="text-left text-white">Response from chat gpt:</p>
-                <p className="h-24 min-h-full text-white w-full border border-buttonBackground">{response}</p>
+            <div className="w-full items-center mt-12">
+                <p className="ml-3 font-monserrat text-left text-white text-sm">Response from ChatGPT:</p>
+                <p className="rounded-lg mt-1 h-32 py-2 px-3 min-h-full text-white w-full border border-buttonBackground">{response}</p>
             </div>
         </>
     )

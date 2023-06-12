@@ -7,7 +7,7 @@ import Logo from "./OTB.svg";
 function App() {
     return (
         <>
-            <div className='w-[720px] mx-auto py-24'>
+            <div className='w-[850px] mx-auto py-24'>
                 <div className='w-full justify-center items-center px-8'>
                     <div className='w-full justify-center items-center py-8'>
                         <BrowserRouter>
