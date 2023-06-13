@@ -100,6 +100,30 @@
   }
 }
 
+@media (max-width: 768px) {
+  .Outside__main {
+    width: 100% !important;
+  }
+
+  .Outside__main--router {
+    flex-direction: column !important;
+  }
+
+  .Outside__main--logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .about__main {
+    width: 100% !important;
+  }
+
+  .home__form,
+  .home__textarea {
+    margin-top: 10px !important;
+  }
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

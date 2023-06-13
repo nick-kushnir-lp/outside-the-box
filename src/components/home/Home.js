@@ -58,7 +58,7 @@ function Home() {
                 problem, we've created a website which can help you generate as many unusual ChatGPT prompts as you
                 need. Let the chocolate and intellect unite!
             </p>
-            <form className='w-full text-center mt-9' onSubmit={handleSubmit}>
+            <form className='home__form w-full text-center mt-9' onSubmit={handleSubmit}>
                 <p className="ml-3 font-monserrat text-left text-white text-sm">Your field of interest:</p>
                 <Select
                     classNamePrefix='outside-box'
@@ -76,7 +76,7 @@ function Home() {
                         Don't see your field of interest? Don't worry, we'll add more soon!
                     </label>
                 </div>
-                <div className='py-4 mt-9'>
+                <div className='py-4 mt-9 home__textarea'>
                     <p className="ml-3 font-monserrat text-left text-white text-sm">Your prompt:</p>
                     <textarea
                         className='h-24 rounded-lg bg-darkBackground appearance-none border border-buttonBackground

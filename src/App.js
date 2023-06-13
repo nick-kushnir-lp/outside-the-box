@@ -7,12 +7,12 @@ import Logo from "./OTB.svg";
 function App() {
     return (
         <>
-            <div className='w-[850px] mx-auto py-24'>
+            <div className='Outside__main w-[850px] mx-auto py-24'>
                 <div className='w-full justify-center items-center px-8'>
                     <div className='w-full justify-center items-center py-8'>
                         <BrowserRouter>
-                            <div className={'flex justify-center align-center justify-center text-center'}>
-                                <div>
+                            <div className={'flex Outside__main--router justify-center align-center justify-center text-center'}>
+                                <div className={'Outside__main--logo'}>
                                     <img src={Logo} alt="Logo"/>
                                 </div>
                                 <div className='mt-9'>

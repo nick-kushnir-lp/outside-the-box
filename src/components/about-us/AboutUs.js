@@ -2,7 +2,7 @@ function AboutUs() {
 
     return (
         <>
-            <div className='w-[550px] mx-auto py-12 px-4 mt-12 rounded-lg border border-r-[4px] border-b-[4px] border-buttonBackground '>
+            <div className='w-[550px] about__main mx-auto py-12 px-4 mt-12 rounded-lg border border-r-[4px] border-b-[4px] border-buttonBackground '>
                 <div className='w-full items-center px-8'>
                     <p
                         className='font-maven block text-white uppercase font-medium text-2xl text-center md:mb-0 pr-4'>
