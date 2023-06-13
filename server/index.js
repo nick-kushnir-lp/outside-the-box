@@ -41,12 +41,11 @@ app.post('/chat', async (req, res) => {
         model: 'text-davinci-003',
         prompt,
         temperature: 1,
-        max_tokens: 100,
+        max_tokens: 256,
         top_p: 1.0,
         frequency_penalty: 0.0,
         presence_penalty: 0.0,
     })
-
     res.send(complete.data.choices[0].text);
 })
 // app.get('*', (req, res) => {
