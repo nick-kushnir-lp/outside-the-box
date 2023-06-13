@@ -39,7 +39,7 @@ function Home() {
 
     const onPromptClick = () => {
         const randomPrompt =
-            `Give me the absolute coolest, most mind-blowing, extraordinary ChatGPT prompt that will really show off the power of ChatGPT. Make sure that it will be both amusing and useful. This prompt should be no longer than one sentence. Focus on the field of ${selectedOption.value}`;
+            `Give me the absolute coolest, most mind-blowing, extraordinary ChatGPT prompt that will really show off the power of ChatGPT. Make sure that it will be both amusing and useful. This prompt should be no longer than one sentence. Focus on the field of ${selectedOption.value}.`;
         setPrompt(randomPrompt);
     }
 
@@ -49,7 +49,7 @@ function Home() {
     }
     return (
         <>
-            <p className='w-full text-center text-white font-medium font-maven text-2xl mt-5'>
+            <p className='w-full text-left text-white font-medium font-maven text-2xl mt-5'>
                 Our chocolate is so smart, it writes ChatGPT prompts for you!
             </p>
             <p className='w-full my-2 text-left font-monserrat text-base text-colorDescription'>
@@ -80,7 +80,7 @@ function Home() {
                     <p className="ml-3 font-monserrat text-left text-white text-sm">Your prompt:</p>
                     <textarea
                         className='h-24 rounded-lg bg-darkBackground appearance-none border border-buttonBackground
-                                rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:text-white'
+                                rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:text-white'
                         type='text'
                         value={prompt}
                         onChange={(e) => setPrompt(e.target.value)}
