@@ -106,7 +106,7 @@ function Home() {
             </form>
             <div className="w-full items-center mt-12">
                 <p className="ml-3 font-monserrat text-left text-white text-sm">Response from ChatGPT:</p>
-                <p className="rounded-lg mt-1 h-32 py-2 px-3 min-h-full text-white w-full border border-buttonBackground">{response}</p>
+                <p className="outside-response rounded-lg mt-1 py-2 px-3 min-h-full text-white w-full border border-buttonBackground">{response}</p>
             </div>
         </>
     )
