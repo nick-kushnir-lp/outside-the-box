@@ -18,8 +18,9 @@ function Home() {
         {value: 'science', label: 'Science'},
         {value: 'debate', label: 'Debate'},
     ];
-    const [prompt, setPrompt] = useState('');
+    // const [prompt, setPrompt] = useState('');
     const [response, setResponse] = useState('');
+    const [randomResponse, setRandomResponse] = useState('');
     const [selectedOption, setSelectedOption] = useState(null);
 
     const sortedList = options.sort((a, b) =>
@@ -37,15 +38,30 @@ function Home() {
             })
     }
 
+    const promptRandomRequest = (prompt) => {
+        axios
+            .post("https://outside-service.onrender.com/chat", {prompt})
+            .then((res) => {
+                console.log(res.data);
+                setRandomResponse(res.data);
+            })
+            .catch((err) => {
+                console.log(`response error ${err}`);
+            })
+    }
+
     const onPromptClick = () => {
         const randomPrompt =
-            `Give me the absolute coolest, most mind-blowing, extraordinary ChatGPT prompt that will really show off the power of ChatGPT. Make sure that it will be both amusing and useful. This prompt should be no longer than one sentence. Focus on the field of ${selectedOption.value}.`;
-        setPrompt(randomPrompt);
+            `Give me the absolute coolest, most mind-blowing, extraordinary ChatGPT prompt that will really show off the power of AI. Make sure that it will be both amusing and useful. This prompt should be no longer than one sentence. Focus on the field of ${selectedOption.value}.`;
+        promptRandomRequest(randomPrompt);
+    }
+
+    const onRequestClick = () => {
+        promptRequest(randomResponse);
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        promptRequest(prompt);
     }
     return (
         <>
@@ -79,24 +95,24 @@ function Home() {
                 <div className='py-4 mt-9 home__textarea'>
                     <p className="ml-3 font-monserrat text-left text-white text-sm">Your prompt:</p>
                     <textarea
+                        type={'text'}
                         className='h-24 rounded-lg bg-darkBackground appearance-none border border-buttonBackground
                                 rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:text-white'
-                        type='text'
-                        value={prompt}
-                        onChange={(e) => setPrompt(e.target.value)}
+                        value={randomResponse}
+                        onChange={(e) => setRandomResponse(e.target.value)}
                     />
                 </div>
                 <div className='flex justify-between'>
                     <button
                         disabled={!selectedOption}
-                        type="submit"
                         className="font-maven rounded-lg uppercase focus:outline-none border border-buttonBackground disabled:bg-gray-500 shadow bg-buttonBackground hover:bg-transparent py-2 px-4 rounded text-sm text-white font-medium"
                         onClick={onPromptClick}
                     >
                         Random Prompt
                     </button>
                     <button
-                        disabled={!prompt}
+                        disabled={!randomResponse}
+                        onClick={onRequestClick}
                         type="submit"
                         className="font-maven rounded-lg uppercase disabled:bg-gray-500 border border-buttonBackground bg-buttonBackground hover:bg-transparent shadow hover:bg-purple-400 py-2 px-4 rounded text-white text-sm font-medium focus:outline-none"
                     >
