@@ -94,15 +94,14 @@ function Home() {
                 </div>
                 <div className='py-4 mt-9 home__textarea'>
                     <p className="ml-3 font-monserrat text-left text-white text-sm">Your prompt:</p>
-                    <textarea
+                    <input
                         type={'text'}
-                        rows="5" cols="80"
                         className='rounded-lg bg-darkBackground appearance-none border border-buttonBackground
                                 rounded w-full py-2 px-3 text-white focus:outline-none focus:text-white'
                         value={randomResponse}
                         onChange={(e) => setRandomResponse(e.target.value)}
                     >
-                    </textarea>
+                    </input>
                 </div>
                 <div className='flex justify-between'>
                     <button
