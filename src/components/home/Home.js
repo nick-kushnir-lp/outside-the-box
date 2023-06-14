@@ -99,7 +99,7 @@ function Home() {
                         rows="5" cols="80"
                         className='rounded-lg bg-darkBackground appearance-none border border-buttonBackground
                                 rounded w-full py-2 px-3 text-white focus:outline-none focus:text-white'
-                        value={randomResponse}
+                        value={randomResponse.trim().replace(/\s\s+/g, ' ')}
                         onChange={(e) => setRandomResponse(e.target.value)}
                     />
                 </div>
