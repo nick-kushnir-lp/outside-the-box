@@ -43,7 +43,7 @@ function Home() {
             .post("https://outside-service.onrender.com/chat", {prompt})
             .then((res) => {
                 console.log(res.data);
-                setRandomResponse(res.data);
+                setRandomResponse(res.data.trim().replace(/\s\s+/g, ' '));
             })
             .catch((err) => {
                 console.log(`response error ${err}`);
@@ -99,7 +99,7 @@ function Home() {
                         rows="5" cols="80"
                         className='rounded-lg bg-darkBackground appearance-none border border-buttonBackground
                                 rounded w-full py-2 px-3 text-white focus:outline-none focus:text-white'
-                        value={randomResponse.trim().replace(/\s\s+/g, ' ')}
+                        value={randomResponse}
                         onChange={(e) => setRandomResponse(e.target.value)}
                     />
                 </div>
